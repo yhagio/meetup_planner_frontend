@@ -1,8 +1,7 @@
 'use strict';
 
 // Check Name
-function checkName(){
-
+function checkName(e){
   document.getElementById('errName').innerHTML = "";
   document.getElementById('registerName').removeAttribute('class');
   var name = document.getElementById('registerName').value.trim();
@@ -17,20 +16,19 @@ function checkName(){
   }
 
   if(errorMsg.length > 0){
+    if(e){
+      e.preventDefault();
+    }
     document.getElementById('errName').innerHTML = errorMsg;
     document.getElementById('registerName').setAttribute('class', 'errorBorder');
   }
 }
 
 // Validate Email
-function checkEmail(emailInput, e){
+function checkEmail(e){
   var email = "";
 
-  if(emailInput) {
-    email = emailInput;
-  } else {
-    email = document.getElementById('registerEmail').value.trim();
-  }
+  email = document.getElementById('registerEmail').value.trim();
 
   document.getElementById('errEmail').innerHTML = "";
   document.getElementById('registerEmail').removeAttribute('class');
@@ -50,14 +48,10 @@ function checkEmail(emailInput, e){
 }
 
 // Validate Age
-function checkAge(ageInput, e){
+function checkAge(e){
   var age = "";
 
-  if(ageInput) {
-    age = ageInput;
-  } else {
-    age = document.getElementById('registerAge').value.trim();
-  }
+  age = document.getElementById('registerAge').value.trim();
 
   document.getElementById('errAge').innerHTML = "";
   document.getElementById('registerAge').removeAttribute('class');
@@ -82,14 +76,10 @@ function checkAge(ageInput, e){
 }
 
 // Check Password
-function checkPassword(passwordInput, e) {
+function checkPassword(e) {
   var password = "";
 
-  if(passwordInput) {
-    password = passwordInput;
-  } else {
-    password = document.getElementById('registerPassword').value.trim();
-  }
+  password = document.getElementById('registerPassword').value.trim();
 
   document.getElementById('errPass').innerHTML = "";
   document.getElementById('registerPassword').removeAttribute('class');
@@ -128,11 +118,10 @@ function checkPassword(passwordInput, e) {
   }
 }
 
-
-document.getElementById('registerForm').addEventListener('submit', function(e){
+function validationFallbackOnRegister(e){
   // Check if browser supports validation.
   // i.e. Safari does not support 'required', so use
-  // following fallback function
+  // following fallback function on submit
   document.getElementById('errName').innerHTML = "";
   document.getElementById('errEmail').innerHTML = "";
   document.getElementById('errAge').innerHTML = "";
@@ -141,20 +130,33 @@ document.getElementById('registerForm').addEventListener('submit', function(e){
     if(e.target[0].value.length === 0){
       e.preventDefault();
       document.getElementById('errName').innerHTML = '* Name required';
-    } else if(e.target[1].value.length === 0){
+    }
+
+    if(e.target[1].value.length === 0){
       e.preventDefault();
       document.getElementById('errEmail').innerHTML = '* Email required';
-    } else if(e.target[2].value.length === 0){
+    }
+
+    if(e.target[2].value.length === 0){
       e.preventDefault();
       document.getElementById('errAge').innerHTML = '* Age required';
-    } else if(e.target[3].value.length === 0){
+    }
+
+    if(e.target[3].value.length === 0){
       e.preventDefault();
       document.getElementById('errPass').innerHTML = '* Password required';
     }
   }
+}
 
-  checkEmail(e.target[1].value, e);
-  checkAge(e.target[2].value, e);
-  checkPassword(e.target[3].value, e);
+
+document.getElementById('registerForm').addEventListener('submit', function(e){
+  
+  validationFallbackOnRegister(e);
+
+  checkName(e);
+  checkEmail(e);
+  checkAge(e);
+  checkPassword(e);
 
 }, false);

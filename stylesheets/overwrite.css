@@ -1,13 +1,11 @@
-.eventCreation{
+/* Overwrite Bootstrap CSS  */
 
-}
-
-.navigationBar > ul > li {
+.navigationBar > ul li {
   margin: 13px 20px 0 0;
   font-size: 1.15em;
 }
 
-h1.headerTitle {
+.headerTitle {
   font-size: 2.1em;
   font-weight: bold;
   margin: 20px 0;
@@ -20,13 +18,23 @@ label {
 label,
 input,
 button,
-textarea {
+textarea,
+select {
   font-size: 1.3em;
   font-weight: 700;
 }
 
+/* Disable selecting on a long touch */
+a,
+button {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 textarea {
-  color: #aaa;
+  color: #777;
 }
 
 #createButton {
@@ -35,4 +43,12 @@ textarea {
 
 .error {
   font-size: 1.2em;
+}
+
+.footerNote {
+  font-size: 1.1em;
+}
+
+.heartIcon {
+  margin:0 5px 4px 0;
 }

@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="/stylesheets/main.css" media="screen">
     <title>Meetup Event Planner</title>
   </head>
-  <body>
+  <body ontouchstart>
     <nav class="navigationBar">
       <ul>
-        <li><a href="/" class="activeLink">Signup</a></li>
+        <li><a href="/" class="activeLink">Register</a></li>
         <li><a href="/events">Events</a></li>
         <li><a href="/create_event">Create Event</a></li>
       </ul>
@@ -56,6 +56,8 @@
             type="number"
             name="registerAge"
             placeholder="Your Age"
+            min="0"
+            max="200"
             required />
 
           <label for="registerPassword">Password*</label><br />
@@ -71,11 +73,18 @@
             placeholder="Your Password"
             required />
 
-          <button id="registerButton" type="submit" class="canSubmit">Fill Up Form</button>
+          <button id="registerButton" type="submit" class="canSubmit">Register</button>
         </form>
       </section>
+
     </div>
 
+    <footer>
+      <p class="footerNote">
+        Built with <span><img class="heartIcon" src="iconmonstr-favorite-icon-48.png" alt="heart icon"></span>by Yuichi Hagio
+      </p>
+    </footer>
+    
     <script src="/javascripts/registration.js"></script>
   </body>
 </html>
