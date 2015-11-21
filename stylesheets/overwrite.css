@@ -1,0 +1,38 @@
+.eventCreation{
+
+}
+
+.navigationBar > ul > li {
+  margin: 13px 20px 0 0;
+  font-size: 1.15em;
+}
+
+h1.headerTitle {
+  font-size: 2.1em;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+label {
+  margin: 0;
+}
+
+label,
+input,
+button,
+textarea {
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+textarea {
+  color: #aaa;
+}
+
+#createButton {
+  width: calc(100% - 10px);
+}
+
+.error {
+  font-size: 1.2em;
+}

@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Yuichi Hagio">
     <meta name="description" content="Meetup Event Planner (Front-End)">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/smalot-bootstrap-datetimepicker/2.3.4/css/bootstrap-datetimepicker.min.css" media="screen">
     <link rel="stylesheet" href="/stylesheets/main.css" media="screen">
+    <link rel="stylesheet" href="/stylesheets/overwrite.css" media="screen">
     <title>Meetup Event Planner</title>
   </head>
   <body>
-    <nav>
+    <nav class="navigationBar">
       <ul>
         <li><a href="/">Signup</a></li>
         <li><a href="/events">Events</a></li>
@@ -18,25 +22,27 @@
       </ul>
     </nav>
 
-    <div class="container">
+    <div class="mainContainer">
 
       <!-- Event creation -->
       <section class="eventCreation">
-        <form class="eventForm" action="/events" method="get">
+        <form id="eventCreationForm" class="eventForm" action="/events" method="get">
           <h1 class="headerTitle">Create Event</h1>
           <p>* Required</p>
 
-          <label for="eventName">Event Name*</label>
+          <label for="eventName">Event Name*</label><br />
+          <span id="errEventName" class="error"></span>
           <input
-            onKeyup="checkEventForm()"
             id="eventName"
             type="text"
             name="eventName"
             placeholder="Event Name"
-            required />
+            required
+            autofocus />
 
-          <label for="eventType">Event Type*</label>
-          <input list="eventType" placeholder="Choose or Input Event  Type"/>
+          <label for="eventType">Event Type*</label><br />
+          <span id="errEventType" class="error"></span>
+          <input list="eventType" placeholder="Choose/Input Event  Type"/>
           <datalist id="eventType" name="eventType">
             <option value="Birthday" />
             <option value="Conference" />
@@ -50,9 +56,9 @@
             <option value="Others" selected=true/>
           </datalist>
 
-          <label for="eventHost">Event Host*</label>
+          <label for="eventHost">Event Host*</label><br />
+          <span id="errEventHost" class="error"></span>
           <input
-            onKeyup="checkEventForm()"
             id="eventHost"
             type="text"
             name="eventHost"
@@ -60,25 +66,26 @@
             autocomplete="name"
             required />
 
-          <label for="startDate">Start Date/Time*</label>
+          <label for="startDate">Start Date/Time*</label><br />
+          <span id="errEventStartDate" class="error"></span>
           <input
-            onKeyup="checkEventForm()"
             id="startDate"
-            type="datetime-local"
+            type="text"
             name="startDate"
+            data-date-format="yyyy-mm-dd hh:ii"
             required />
 
-          <label for="endDate">End Date/Time*</label>
+          <label for="endDate">End Date/Time*</label><br />
+          <span id="errEventEndDate" class="error"></span>
           <input
-            onKeyup="checkEventForm()"
             id="endDate"
             type="datetime-local"
             name="endDate"
             required />
 
-          <label for="location">Event Location*</label>
+          <label for="location">Event Location*</label><br />
+          <span id="errEventLocation" class="error"></span>
           <input
-            onKeyup="checkEventForm()"
             id="location"
             type="text"
             name="location"
@@ -86,7 +93,7 @@
             autocomplete="street-address"
             required />
 
-          <label for="message">(Optional) Message</label>
+          <label for="message">(Optional) Message</label><br />
           <textarea
             id="message"
             rows="10"
@@ -94,12 +101,19 @@
             placeholder="(Optional) message"></textarea>
 
 
-          <button id="createButton" type="submit" disabled=true>Create</button>
+          <button id="createButton" type="submit" class="canSubmit">Create</button>
         </form>
       </section>
 
     </div>
 
-    <script src="/javascripts/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smalot-bootstrap-datetimepicker/2.3.4/js/bootstrap-datetimepicker.min.js"></script>
+    <script src=""></script>
+    <script src=""></script>
+    <script src="/javascripts/eventCreation.js"></script>
+    <script type="text/javascript">
+      $('#startDate').datetimepicker();
+    </script>
   </body>
 </html>
