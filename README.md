@@ -3,7 +3,7 @@
 ### DEMO
 http://yhagio.github.io/meetup_planner_frontend
 
-![screenshot](screenshot.png)
+![Screenshot](/screenshot.png)
 
 ### Tested browsers
 - Google Chrome Version 46.0.2490.86 (64-bit)
@@ -15,7 +15,11 @@ http://yhagio.github.io/meetup_planner_frontend
 - Add `ontouchstart` attribute in `<body>` to enable "active" pseudo class on iOS
 - Add `-webkit-appearance: none;` for CSS to enable `box-shadow` in iOS Safari
 
-### Todo
+### Todo ideas
+- ES2015
+- Refactor CSS & Javascript
+- Minify files for performance
+- Backend integration with Node.js/Expressjs/MongoDB in [this repo](https://github.com/yhagio/meetup_planner)
 
 ### References
 - [bootstrap-datetimepicker](https://github.com/smalot/bootstrap-datetimepicker)
