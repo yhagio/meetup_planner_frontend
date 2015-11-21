@@ -1,6 +1,9 @@
 ### Meetup Event Planner (Just form)
 
 ### DEMO
+http://yhagio.github.io/meetup_planner_frontend
+
+![screenshot](screenshot.png)
 
 ### Tested browsers
 - Google Chrome Version 46.0.2490.86 (64-bit)
