@@ -1,5 +1,12 @@
 'use strict';
 
+// function checkInput(type) {
+//   var input = document.createElement("input");
+//   input.setAttribute("type", type);
+//   return input.type == type;
+// }
+// 
+
 document.getElementById('eventCreationForm').addEventListener('submit', function(e){
   // Check if browser supports validation.
   // i.e. Safari does not support 'required', so use
