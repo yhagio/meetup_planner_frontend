@@ -5,6 +5,13 @@ http://yhagio.github.io/meetup_planner_frontend
 
 ![Screenshot](/screenshot.png)
 
+### Run locally
+```
+git clone https://github.com/yhagio/meetup_planner_frontend.git mp
+cd mp/build
+http-server
+```
+
 ### Tested browsers
 - Google Chrome Version 46.0.2490.86 (64-bit)
 - Safari Version 9.0.1 (11601.2.7.2)

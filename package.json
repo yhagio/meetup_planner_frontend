@@ -18,6 +18,10 @@
   "homepage": "https://github.com/yhagio/meetup_planner_frontend#readme",
   "devDependencies": {
     "gulp": "^3.9.0",
-    "gulp-babel": "^6.1.0"
+    "gulp-babel": "^6.1.0",
+    "gulp-minify": "0.0.5",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-minify-html": "^1.0.4",
+    "gulp-uglify": "^1.5.1"
   }
 }
