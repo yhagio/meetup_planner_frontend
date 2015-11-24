@@ -3,7 +3,6 @@
 // Check Name
 function checkName(e){
   resetInnerHTML('errName');
-  // document.getElementById('errName').innerHTML = "";
   document.getElementById('registerName').removeAttribute('class');
   var name = document.getElementById('registerName').value.trim();
   var errorMsg = "";
@@ -21,7 +20,8 @@ function checkName(e){
       e.preventDefault();
     }
     document.getElementById('errName').innerHTML = errorMsg;
-    document.getElementById('registerName').setAttribute('class', 'errorBorder');
+
+    setAttribute('registerName', 'class', 'errorBorder');
   }
 }
 
@@ -32,7 +32,6 @@ function checkEmail(e){
   email = document.getElementById('registerEmail').value.trim();
 
   resetInnerHTML('errEmail');
-  // document.getElementById('errEmail').innerHTML = "";
   document.getElementById('registerEmail').removeAttribute('class');
   var errorMsg = "";
 
@@ -45,7 +44,7 @@ function checkEmail(e){
       e.preventDefault();
     }
     document.getElementById('errEmail').innerHTML = errorMsg;
-    document.getElementById('registerEmail').setAttribute('class', 'errorBorder');
+    setAttribute('registerEmail', 'class', 'errorBorder');
   }
 }
 
@@ -56,7 +55,6 @@ function checkAge(e){
   age = document.getElementById('registerAge').value.trim();
 
   resetInnerHTML('errAge');
-  // document.getElementById('errAge').innerHTML = "";
   document.getElementById('registerAge').removeAttribute('class');
   var errorMsg = "";
 
@@ -73,7 +71,7 @@ function checkAge(e){
       e.preventDefault();
     }
     document.getElementById('errAge').innerHTML = errorMsg;
-    document.getElementById('registerAge').setAttribute('class', 'errorBorder');
+    setAttribute('registerAge', 'class', 'errorBorder');
   }
 
 }
@@ -85,7 +83,6 @@ function checkPassword(e) {
   password = document.getElementById('registerPassword').value.trim();
 
   resetInnerHTML('errPass');
-  // document.getElementById('errPass').innerHTML = "";
   document.getElementById('registerPassword').removeAttribute('class');
   var errorMsg = "";
 
@@ -118,7 +115,7 @@ function checkPassword(e) {
       e.preventDefault();
     }
     document.getElementById('errPass').innerHTML = errorMsg;
-    document.getElementById('registerPassword').setAttribute('class', 'errorBorder');
+    setAttribute('registerPassword', 'class', 'errorBorder');
   }
 }
 
@@ -130,10 +127,6 @@ function validationFallbackOnRegister(e){
   resetInnerHTML('errEmail');
   resetInnerHTML('errAge');
   resetInnerHTML('errPass');
-  // document.getElementById('errName').innerHTML = "";
-  // document.getElementById('errEmail').innerHTML = "";
-  // document.getElementById('errAge').innerHTML = "";
-  // document.getElementById('errPass').innerHTML = "";
   if (!e.target.checkValidity()) {
     if(e.target[0].value.length === 0){
       e.preventDefault();

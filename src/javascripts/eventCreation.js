@@ -13,7 +13,7 @@ if(!supportThisTypeAttribute('datetime-local')){
 // Check Event name
 // Make sure event name length is less than 50 chars
 function checkEventName(e){
-  document.getElementById('errEventName').innerHTML = "";
+  resetInnerHTML('errEventName');
   document.getElementById('eventName').removeAttribute('class');
   var name = document.getElementById('eventName').value.trim();
   var errorMsg = "";
@@ -38,7 +38,7 @@ function checkEventName(e){
 // Check Event type - make sure user selects one
 // out of the event type list
 function checkEventType(e){
-  document.getElementById('errEventType').innerHTML = "";
+  resetInnerHTML('errEventType');
   document.getElementById('eventType').removeAttribute('class');
   var eventType = document.getElementById('eventType').value.trim();
   var errorMsg = "";
@@ -71,7 +71,7 @@ function checkEventType(e){
 // Make sure host name is not empty
 // and length is less than 50
 function checkEventHost(e){
-  document.getElementById('errEventHost').innerHTML = "";
+  resetInnerHTML('errEventHost');
   document.getElementById('eventHost').removeAttribute('class');
   var host = document.getElementById('eventHost').value.trim();
   var errorMsg = "";
@@ -95,7 +95,7 @@ function checkEventHost(e){
 
 // Check Event start date/time
 function checkEventStartDate(e){
-  document.getElementById('errEventStartDate').innerHTML = "";
+  resetInnerHTML('errEventStartDate');
   document.getElementById('startDate').removeAttribute('class');
   var startDate = document.getElementById('startDate').value.trim();
   var errorMsg = "";
@@ -115,7 +115,7 @@ function checkEventStartDate(e){
 
 // Check Event end date/time
 function checkEventEndDate(e){
-  document.getElementById('errEventEndDate').innerHTML = "";
+  resetInnerHTML('errEventEndDate');
   document.getElementById('endDate').removeAttribute('class');
   var endDate = document.getElementById('endDate').value.trim();
   var errorMsg = "";
@@ -135,7 +135,7 @@ function checkEventEndDate(e){
 
 // Check Event location
 function checkEventLocation(e){
-  document.getElementById('errEventLocation').innerHTML = "";
+  resetInnerHTML('errEventLocation');
   document.getElementById('location').removeAttribute('class');
   var location = document.getElementById('location').value.trim();
   var errorMsg = "";
@@ -159,7 +159,7 @@ function checkEventLocation(e){
 
 // Check Message (length is less than 700 chars)
 function checkMessage(e){
-  document.getElementById('errMessage').innerHTML = "";
+  resetInnerHTML('errMessage');
   document.getElementById('message').removeAttribute('class');
   var message = document.getElementById('message').value.trim();
   var errorMsg = "";
@@ -181,12 +181,12 @@ function validationFallbackOnCreate(e){
   // Check if browser supports validation.
   // i.e. Safari does not support 'required', so use
   // following fallback function on submit
-  document.getElementById('errEventName').innerHTML = "";
-  document.getElementById('errEventType').innerHTML = "";
-  document.getElementById('errEventHost').innerHTML = "";
-  document.getElementById('errEventStartDate').innerHTML = "";
-  document.getElementById('errEventEndDate').innerHTML = "";
-  document.getElementById('errEventLocation').innerHTML = "";
+  resetInnerHTML('errEventName');
+  resetInnerHTML('errEventType');
+  resetInnerHTML('errEventHost');
+  resetInnerHTML('errEventStartDate');
+  resetInnerHTML('errEventEndDate');
+  resetInnerHTML('errEventLocation');
 
   if (!e.target.checkValidity()) {
     if(e.target[0].value.length === 0){
