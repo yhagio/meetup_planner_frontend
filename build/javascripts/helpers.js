@@ -1,18 +1,1 @@
-'use strict'
-// Set attrubute to a specific element
-// Param 'elementID' : element's id
-// Param 'attr' : attribute type
-// Param 'value' : attribute value
-;
-function setAttribute(elementID, attr, value) {
-  return document.getElementById(elementID).setAttribute(attr, value);
-}
-
-// Check if the browser supports 'datetime-local' attribute
-// If not, use datetimepicker library to compensate
-// the difficulty of entering the date + time
-function supportThisTypeAttribute(type) {
-  var input = document.createElement("input");
-  input.setAttribute("type", type);
-  return input.type == type;
-}
+"use strict";function resetInnerHTML(t){return document.getElementById(t).innerHTML=""}function setAttribute(t,e,n){return document.getElementById(t).setAttribute(e,n)}function supportThisTypeAttribute(t){var e=document.createElement("input");return e.setAttribute("type",t),e.type==t}

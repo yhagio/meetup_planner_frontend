@@ -1,4 +1,10 @@
 'use strict';
+
+// Reset innerHTML value of an element
+function resetInnerHTML(elementID){
+  return document.getElementById(elementID).innerHTML = "";
+}
+
 // Set attrubute to a specific element
 // Param 'elementID' : element's id
 // Param 'attr' : attribute type

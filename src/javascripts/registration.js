@@ -2,7 +2,8 @@
 
 // Check Name
 function checkName(e){
-  document.getElementById('errName').innerHTML = "";
+  resetInnerHTML('errName');
+  // document.getElementById('errName').innerHTML = "";
   document.getElementById('registerName').removeAttribute('class');
   var name = document.getElementById('registerName').value.trim();
   var errorMsg = "";
@@ -30,7 +31,8 @@ function checkEmail(e){
 
   email = document.getElementById('registerEmail').value.trim();
 
-  document.getElementById('errEmail').innerHTML = "";
+  resetInnerHTML('errEmail');
+  // document.getElementById('errEmail').innerHTML = "";
   document.getElementById('registerEmail').removeAttribute('class');
   var errorMsg = "";
 
@@ -53,7 +55,8 @@ function checkAge(e){
 
   age = document.getElementById('registerAge').value.trim();
 
-  document.getElementById('errAge').innerHTML = "";
+  resetInnerHTML('errAge');
+  // document.getElementById('errAge').innerHTML = "";
   document.getElementById('registerAge').removeAttribute('class');
   var errorMsg = "";
 
@@ -81,7 +84,8 @@ function checkPassword(e) {
 
   password = document.getElementById('registerPassword').value.trim();
 
-  document.getElementById('errPass').innerHTML = "";
+  resetInnerHTML('errPass');
+  // document.getElementById('errPass').innerHTML = "";
   document.getElementById('registerPassword').removeAttribute('class');
   var errorMsg = "";
 
@@ -122,10 +126,14 @@ function validationFallbackOnRegister(e){
   // Check if browser supports validation.
   // i.e. Safari does not support 'required', so use
   // following fallback function on submit
-  document.getElementById('errName').innerHTML = "";
-  document.getElementById('errEmail').innerHTML = "";
-  document.getElementById('errAge').innerHTML = "";
-  document.getElementById('errPass').innerHTML = "";
+  resetInnerHTML('errName');
+  resetInnerHTML('errEmail');
+  resetInnerHTML('errAge');
+  resetInnerHTML('errPass');
+  // document.getElementById('errName').innerHTML = "";
+  // document.getElementById('errEmail').innerHTML = "";
+  // document.getElementById('errAge').innerHTML = "";
+  // document.getElementById('errPass').innerHTML = "";
   if (!e.target.checkValidity()) {
     if(e.target[0].value.length === 0){
       e.preventDefault();
@@ -150,7 +158,7 @@ function validationFallbackOnRegister(e){
 }
 
 
-document.getElementById('registerForm').addEventListener('submit', function(e){
+document.getElementById('registerForm').addEventListener('submit', (e)=> {
   
   validationFallbackOnRegister(e);
 
