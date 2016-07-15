@@ -5,10 +5,14 @@ http://yhagio.github.io/meetup_planner_frontend
 
 ![Screenshot](/screenshot.png)
 
-### Run locally
+### To Run locally
 ```
+npm i -g http-server
 git clone https://github.com/yhagio/meetup_planner_frontend.git mp
-cd mp/build
+cd mp
+npm install
+gulp
+cd build
 http-server
 ```
 
@@ -22,11 +26,8 @@ http-server
 - Add `ontouchstart` attribute in `<body>` to enable "active" pseudo class on iOS
 - Add `-webkit-appearance: none;` for CSS to enable `box-shadow` in iOS Safari
 
-### Todo ideas
-- ES2015
-- Refactor CSS & Javascript
-- Minify files for performance
-- Backend integration with Node.js/Expressjs/MongoDB in [this repo](https://github.com/yhagio/meetup_planner)
+### Extra
+- I also created full-stack version Node.js/Expressjs/MongoDB in [this repo](https://github.com/yhagio/meetup_planner)
 
 ### References
 - [bootstrap-datetimepicker](https://github.com/smalot/bootstrap-datetimepicker)
